@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gym Management Hub - Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        fieldset {
+            width: 400px;
+            padding: 20px;
+            background-color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="#" method="post">
+
+        <fieldset>
+
+            <legend><strong>Member Registration</strong></legend>
+
+            <h1>🏋️ Gym Management Hub</h1>
+
+            <label for="fullname">Full Name:</label><br>
+            <input type="text" id="fullname" name="fullname" required>
+            <br><br>
+
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" required>
+            <br><br>
+
+            <label for="membership">Membership Plan:</label><br>
+            <select id="membership" name="membership">
+                <option>Basic</option>
+                <option>Premium</option>
+                <option>VIP</option>
+            </select>
+            <br><br>
+
+            <label for="password">Create Password:</label><br>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+
+            <label for="confirmPassword">Confirm Password:</label><br>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <br><br>
+
+            <button type="submit">Register</button>
+
+            <br><br>
+
+            <p>
+                Already have an account?
+                <a href="login.html">Login Here</a>
+            </p>
+
+        </fieldset>
+
+    </form>
+
+</body>
+
+</html>
