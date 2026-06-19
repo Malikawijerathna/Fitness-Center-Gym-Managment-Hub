@@ -10,7 +10,7 @@
 <fieldset>
     <center><legend><h1>Payment Form</h1></legend></center>
 
-    <form onsubmit="saveData(); return false;">
+    <form action="/payment-details" method="POST">
 
         <fieldset>
             <center>
@@ -38,7 +38,7 @@
 
         <br>
 
-        <button type="submit">
+        <button> <a href="payment invoice.html" >
             Payment Details
         </button>
 
@@ -47,22 +47,6 @@
 </fieldset>
 </center>
 
-<script>
-function saveData() {
-
-    localStorage.setItem(
-        "member-id",
-        document.getElementById("member-id").value
-    );
-
-    localStorage.setItem(
-        "member-name",
-        document.getElementById("member-name").value
-    );
-
-    window.location.href = "payment invoice.html";
-}
-</script>
 
 </body>
 </html>
