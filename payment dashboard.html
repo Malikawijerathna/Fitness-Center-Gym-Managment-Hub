@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+</head>
+<body>
+<center>
+<fieldset>
+    <center><legend><h1>Payment Form</h1></legend></center>
+
+    <form onsubmit="saveData(); return false;">
+
+        <fieldset>
+            <center>
+            <legend><h2>Member Details</h2></legend>
+            </center>
+
+            <p>
+                <label>Member ID:</label><br>
+                <input type="text"
+                       id="member-id"
+                       placeholder="e.g., USR_04112"
+                       required>
+            </p>
+
+            <p>
+                <label>Member Name:</label><br>
+                <input type="text"
+                       id="member-name"
+                       placeholder="Enter name"
+                       required>
+            </p>
+
+        </fieldset>
+    
+
+        <br>
+
+        <button type="submit">
+            Payment Details
+        </button>
+
+    </form>
+
+</fieldset>
+</center>
+
+<script>
+function saveData() {
+
+    localStorage.setItem(
+        "member-id",
+        document.getElementById("member-id").value
+    );
+
+    localStorage.setItem(
+        "member-name",
+        document.getElementById("member-name").value
+    );
+
+    window.location.href = "payment invoice.html";
+}
+</script>
+
+</body>
+</html>
