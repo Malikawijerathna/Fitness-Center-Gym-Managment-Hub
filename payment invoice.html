@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Gym Invoice</title>
+
+    <style>
+        @media print {
+            #printBtn {
+                display: none;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <h1 align="center">FIT LIFE GYM</h1>
+    <p align="center">123 Main Street, Colombo</p>
+    <p align="center">Phone: 0771234567</p>
+
+    <hr>
+<fieldset>
+    <h2>INVOICE</h2>
+
+    <p><strong>Member ID:
+        <span id="member-id"></span> 
+    </strong></p>
+
+    <p><strong>Member Name:
+         <span id="member-name"></span>
+    </strong></p>
+    
+    <table border="1" cellpadding="10">
+        <tr>
+    <td>Gym Membership Fee</td>
+    <td>
+        <select id="duration" name="duration">
+            <option value="1 Month">1 Month</option>
+            <option value="3 Months">3 Months</option>
+            <option value="6 Months">6 Months</option>
+            <option value="1 Year">1 Year</option>
+        </select>
+    </td>
+    <td>
+        <select id="payment1" onchange="calculateTotal()">
+            <option value="2000">2000</option>
+            <option value="8000">8000</option>
+            <option value="11000">11000</option>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td>Personal Training</td>
+    <td>
+        <select id="sessions" name="sessions">
+            <option value="1">1 Session</option>
+            <option value="5">5 Sessions</option>
+            <option value="10">10 Sessions</option>
+        </select>
+    </td>
+    <td>
+        <select id="payment2" onchange="calculateTotal()">
+            <option value="1000">1000</option>
+            <option value="5000">5000</option>
+            <option value="10000">10000</option>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2"><strong>Total</strong></td>
+    <td><strong id="total">0</strong></td>
+</tr>
+    </table>
+
+    <br><br>
+
+    <p>Payment Method: <span id="paymentmethod"></span></p>
+    <p>Status: <span id="paymentstatus"></span></p>
+
+    <br><br>
+
+    <p>______________________</p>
+    <p>Authorized Signature</p>
+</fieldset>
+<br>
+<hr>
+
+ <!-- Invoice Content -->
+    
+
+    <!-- Print Button -->
+    <button id="printBtn" onclick="window.print()">
+        Print Invoice
+    </button>
+
+
+<script>
+document.getElementById("member-id").innerHTML =
+    localStorage.getItem("member-id");
+
+document.getElementById("member-name").innerHTML =
+    localStorage.getItem("member-name");
+</script> 
+
+<script>
+function calculateTotal() {
+
+    let membership =
+        parseInt(document.getElementById("payment1").value);
+
+    let training =
+        parseInt(document.getElementById("payment2").value);
+
+    let total = membership + training;
+
+    document.getElementById("total").innerHTML = total;
+}
+
+calculateTotal();
+</script>
+
+</body>
+</html>
