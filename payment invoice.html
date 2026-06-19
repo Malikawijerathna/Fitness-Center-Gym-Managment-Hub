@@ -2,7 +2,7 @@
 <html>
 <head>
     
-    <title>Gym Invoice</title>
+    <title>Invoice</title>
 
     <style>
         @media print {
@@ -16,12 +16,7 @@
 
 
 <body>
-
-    <h1 align="center">FIT LIFE GYM</h1>
-    <p align="center">123 Main Street, Colombo</p>
-    <p align="center">Phone: 0771234567</p>
-
-    <hr>
+<center><
 <fieldset>
     <h2>INVOICE</h2>
 
@@ -45,7 +40,7 @@
         </select>
     </td>
     <td>
-        <select id="payment1" onchange="calculateTotal()">
+        <select id="payment1"">
             <option value="2000">2000</option>
             <option value="8000">8000</option>
             <option value="11000">11000</option>
@@ -63,7 +58,7 @@
         </select>
     </td>
     <td>
-        <select id="payment2" onchange="calculateTotal()">
+        <select id="payment2"> 
             <option value="1000">1000</option>
             <option value="5000">5000</option>
             <option value="10000">10000</option>
@@ -79,14 +74,26 @@
 
     <br><br>
 
-    <p>Payment Method: <span id="paymentmethod"></span></p>
-    <p>Status: <span id="paymentstatus"></span></p>
+    <p>Payment Method: 
+        <select id="method">
+            <option value="Cash">Cash</option>
+            <option value="Credit Card">Credit Card</option>
+            <option value="Debit Card">Debit Card</option>
+            <option value="Online Tranfer">Online Transfer</option>
+        </select> <span id="paymentmethod"></span></p>
+    <p>Status: 
+        <select id="status">
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+            <option value="Failed">Failed</option>
+        </select> <span id="paymentstatus"></span></p>
 
     <br><br>
 
     <p>______________________</p>
     <p>Authorized Signature</p>
 </fieldset>
+</center>
 <br>
 <hr>
 
@@ -94,35 +101,11 @@
     
 
     <!-- Print Button -->
-    <button id="printBtn" onclick="window.print()">
+   <center><button id="printBtn" onclick="window.print()">
         Print Invoice
-    </button>
+    </button></center>
 
 
-<script>
-document.getElementById("member-id").innerHTML =
-    localStorage.getItem("member-id");
-
-document.getElementById("member-name").innerHTML =
-    localStorage.getItem("member-name");
-</script> 
-
-<script>
-function calculateTotal() {
-
-    let membership =
-        parseInt(document.getElementById("payment1").value);
-
-    let training =
-        parseInt(document.getElementById("payment2").value);
-
-    let total = membership + training;
-
-    document.getElementById("total").innerHTML = total;
-}
-
-calculateTotal();
-</script>
 
 </body>
 </html>
